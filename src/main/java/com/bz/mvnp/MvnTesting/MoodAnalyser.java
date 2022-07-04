@@ -2,12 +2,22 @@ package com.bz.mvnp.MvnTesting;
 
 public class MoodAnalyser {
 
-	public String analyseMood(String message) {
+	String message;
 
-		if (message.contains("sad")) {
+
+	public MoodAnalyser() {
+	}
+	public MoodAnalyser(String message) {
+		this.message = message;
+	}
+
+	
+	public String analyseMood() {
+		if (message.contains("Sad")) {
 			return "Sad";
 		}
 		return "Happy";
+	
 	}
-
+	
 }
