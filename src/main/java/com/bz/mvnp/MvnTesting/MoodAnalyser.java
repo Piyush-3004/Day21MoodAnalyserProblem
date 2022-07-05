@@ -1,28 +1,37 @@
 package com.bz.mvnp.MvnTesting;
 
-public class MoodAnalyser {
+public class MoodAnalyser extends Exception {
 
 	String message;
-	
+
 	public MoodAnalyser() {
-		
+
 	}
 
-	public MoodAnalyser(String message) {
-		this.message=message;
+	enum ExceptionType {
+		NULL, INVALID_ENTRY;
+
 	}
-	
-	public String analyseMood() {
+
+	ExceptionType type;
+
+	public MoodAnalyser(String message) {
+		super(message);
+		this.message = message;
+	}
+
+	public String analyseMood() throws MoodAnalyser {
 		try {
-			
-		if (message.contains("Sad")) {
-			return "Sad";
-		}
-		return "Happy";
-		}catch (NullPointerException e) {
+			if (message == null)
+				throw new MoodAnalyser("Empty Mood");
+			if (message.contains("Sad")) {
+				return "Sad";
+			}
+			return "Happy";
+		} catch (NullPointerException e) {
 			return "Happy";
 		}
-	
+
 	}
-	
+
 }
