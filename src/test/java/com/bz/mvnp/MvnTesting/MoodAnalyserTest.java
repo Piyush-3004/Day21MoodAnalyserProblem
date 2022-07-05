@@ -11,13 +11,13 @@ public class MoodAnalyserTest {
 
 	@Test
 	public void givenMessage_WhenSad_ShouldReturnSad() {
-		String mood = moodAnalyserObj.analyseMood("I am in Sad mood");
+		String mood = new MoodAnalyser("I am in Sad mood").analyseMood();
 		Assert.assertEquals("Sad", mood);
 	}
 
 	@Test
 	public void givenMessage_WhenHappy_ShouldReturnHappy() {
-		String mood = moodAnalyserObj.analyseMood(null);
+		String mood = new MoodAnalyser("I am in Happy mood").analyseMood();
 		Assert.assertEquals("Happy", mood);
 	}
 

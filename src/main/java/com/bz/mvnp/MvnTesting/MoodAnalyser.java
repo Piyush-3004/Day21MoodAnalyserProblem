@@ -4,8 +4,15 @@ public class MoodAnalyser {
 
 	String message;
 	
-	public String analyseMood(String message) {
+	public MoodAnalyser() {
+		
+	}
 
+	public MoodAnalyser(String message) {
+		this.message=message;
+	}
+	
+	public String analyseMood() {
 		try {
 			
 		if (message.contains("Sad")) {
